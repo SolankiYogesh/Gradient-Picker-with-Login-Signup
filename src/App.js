@@ -2,10 +2,25 @@ import "./App.css";
 import Button from "./Components/Button/Button";
 import TextInput from "./Components/TextInput/TextInput";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Lottie from "lottie-react";
+import loading from "./Assets/loading.json";
+
 function App() {
   const [isPassword, setISPassword] = useState(true);
-  return (
+  const [isLoading, setISLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setISLoading(false);
+    }, 2000);
+  }, []);
+
+  return isLoading ? (
+    <div id="noselect" className="App">
+      <Lottie animationData={loading} loop={true} />
+    </div>
+  ) : (
     <div id="noselect" className="App">
       <img alt="background" id="background" src="/Assets/background.png"></img>
       <div id="innerDiv">
