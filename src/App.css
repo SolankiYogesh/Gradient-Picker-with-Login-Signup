@@ -1,0 +1,115 @@
+.App {
+  background-color: #525461;
+  height: 100vh;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+#background {
+  height: 95%;
+  width: 80%;
+  align-self: center;
+  justify-self: center;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+#innerDiv {
+  display: flex;
+  height: 90%;
+  width: 75%;
+  position: absolute;
+  flex-direction: column;
+}
+#headerVIew {
+  flex-direction: row;
+  display: flex;
+  align-items: flex-start;
+}
+#titleText {
+  color: white;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 600;
+  margin-right: 100px;
+}
+#btnText {
+  color: white;
+  margin-right: 40px;
+  text-decoration: none;
+}
+#btnText:hover {
+  color: #3090f4;
+}
+#textContainerView {
+  flex-direction: column;
+  display: flex;
+  margin-top: 10vh;
+}
+#startText {
+  color: #99a0b0;
+  font-size: medium;
+  margin-top: 20px;
+}
+#createText {
+  color: white;
+  font-size: xx-large;
+  margin-top: 20px;
+  font-weight: 700;
+}
+#alreadyMembertext {
+  color: #99a0b0;
+  font-size: small;
+  margin-top: 20px;
+}
+#loginText {
+  color: #3090f4;
+  margin-left: 10px;
+}
+#fieldContainer {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-top: 20px;
+}
+#rowButtonView {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#btnView {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+#btn1 {
+  background-color: #3090f4;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  flex: 1;
+  margin-left: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}

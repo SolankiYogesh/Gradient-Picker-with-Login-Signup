@@ -1,0 +1,83 @@
+#material-textfield {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #323645;
+  border: 2px solid transparent;
+  border-radius: 20px;
+}
+
+#label {
+  position: absolute;
+  font-size: 0.85rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: 3090f4;
+  padding: 0 0.3rem;
+  margin: 0 0.5rem;
+  transition: 0.1s ease-out;
+  transform-origin: left top;
+  pointer-events: none;
+  color: white;
+  z-index: 1000;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+input {
+  font-size: 1rem;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  transition: 0.1s ease-out;
+  background-color: #323645;
+  width: 100%;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input:focus + #label {
+  color: #3090f4;
+  top: 0;
+  transform: translateY(-1) scale(0.9);
+  z-index: 1000;
+  border: 2px solid transparent;
+  border-color: #3090f4;
+  border-radius: 10px;
+  background-image: linear-gradient(#323645, #525461);
+}
+input:not(:placeholder-shown) + #label {
+  top: 0;
+  transform: translateY(-1) scale(0.9);
+  z-index: 1000;
+}
+input:not(:placeholder-shown) + #label {
+  top: 0;
+  transform: translateY(-1) scale(0.9);
+  z-index: 1000;
+  color: #3090f4;
+  transform: translateY(-1) scale(0.9);
+  border: 2px solid transparent;
+  border-color: #3090f4;
+  border-radius: 10px;
+  background-image: linear-gradient(#323645, #525461);
+}
+input:not(:placeholder-shown):not(:focus) + #label {
+  color: rgb(21, 110, 233);
+}
+#icon {
+  color: white;
+  margin-right: 10px;
+  /* position: absolute; */
+}
