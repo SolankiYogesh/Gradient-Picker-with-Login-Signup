@@ -1,0 +1,56 @@
+#textContainerView {
+  flex-direction: column;
+  display: flex;
+  margin-top: 10vh;
+}
+#startText {
+  color: #99a0b0;
+  font-size: medium;
+  margin-top: 20px;
+}
+#createText {
+  color: white;
+  font-size: xx-large;
+  margin-top: 20px;
+  font-weight: 700;
+}
+#alreadyMembertext {
+  color: #99a0b0;
+  font-size: small;
+  margin-top: 20px;
+}
+#loginText {
+  color: #3090f4;
+  margin-left: 10px;
+}
+#fieldContainer {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-top: 20px;
+}
+#rowButtonView {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#btnView {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+#btn1 {
+  background-color: #3090f4;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  flex: 1;
+  margin-left: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

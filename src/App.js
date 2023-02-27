@@ -1,14 +1,17 @@
 import "./App.css";
 import Button from "./Components/Button/Button";
 import TextInput from "./Components/TextInput/TextInput";
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
+// <-- import styles to be used
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import loading from "./Assets/loading.json";
+import preview from "./Assets/data.json";
+import { Register } from "./Components/Register/Register";
+import { Login } from "./Components/Login/Login";
 
 function App() {
-  const [isPassword, setISPassword] = useState(true);
   const [isLoading, setISLoading] = useState(true);
+  const [isLogin, setISLogin] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -39,46 +42,13 @@ function App() {
             Join
           </a>
         </div>
-        <div id="textContainerView">
-          <span id="startText">START FOR FREE</span>
-          <span id="createText">Create new account</span>
-          <span id="alreadyMembertext">
-            Already A Member?
-            <a id="loginText" href="http://localhost:3000/">
-              Log In
-            </a>
-          </span>
-        </div>
-        <div id="fieldContainer">
-          <div id="rowButtonView">
-            <TextInput
-              placeholder={"First name"}
-              iconName={solid("user")}
-              style={styles.firstnameInput}
-            />
-            <TextInput
-              placeholder={"Last name"}
-              iconName={solid("user")}
-              style={styles.lastnameInput}
-            />
-          </div>
-          <TextInput
-            iconName={solid("lock")}
-            type={"email"}
-            placeholder={"Email Address"}
-            style={styles.passwInput}
-          />
-          <TextInput
-            iconName={!isPassword ? solid("eye-slash") : solid("eye")}
-            isPassword={isPassword}
-            placeholder={"Password"}
-            style={styles.passwInput}
-            onClick={() => setISPassword(!isPassword)}
-          />
-        </div>
-        <div id="btnView">
-          <Button text={"Change Password"} />
-          <Button color={"#3090f4"} text={"Create Account"} />
+        {isLogin ? (
+          <Login onClick={() => setISLogin(false)} />
+        ) : (
+          <Register onClick={() => setISLogin(true)} />
+        )}
+        <div id="preview">
+          <Lottie animationData={preview} loop={true} />
         </div>
       </div>
     </div>
@@ -86,24 +56,3 @@ function App() {
 }
 
 export default App;
-
-const styles = {
-  firstnameInput: {
-    marginTop: 10,
-    marginBottom: 10,
-    marginRight: 10,
-    flex: 0.45,
-  },
-  lastnameInput: {
-    marginTop: 10,
-    marginBottom: 10,
-    marginLeft: 10,
-    flex: 0.45,
-  },
-  passwInput: {
-    marginTop: 10,
-    marginBottom: 10,
-    width: "100%",
-    flex: 1,
-  },
-};

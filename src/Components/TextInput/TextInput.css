@@ -81,3 +81,13 @@ input:not(:placeholder-shown):not(:focus) + #label {
   margin-right: 10px;
   /* position: absolute; */
 }
+@media only screen and (max-width: 800px) {
+  #innerDiv {
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #innerDiv {
+    align-items: center;
+  }
+}
