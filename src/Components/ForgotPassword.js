@@ -7,7 +7,7 @@ import TextInput from "./TextInput/TextInput";
 import Button from "./Button/Button";
 export const ForgotPassword = ({ onClick }) => {
   return (
-    <Fade top>
+    <Fade top cascade>
       <div id="textContainerView">
         <span id="startText">START FOR FREE</span>
         <span id="createText">ForgotPassword</span>

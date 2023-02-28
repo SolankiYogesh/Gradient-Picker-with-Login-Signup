@@ -8,7 +8,7 @@ import Fade from "react-reveal/Fade";
 export const Login = ({ onClick, onClickForgotPassword }) => {
   const [isPassword, setISPassword] = useState(true);
   return (
-    <Fade left>
+    <Fade left cascade>
       <div id="textContainerView">
         <span id="startText">START FOR FREE</span>
         <span id="createText">Login</span>

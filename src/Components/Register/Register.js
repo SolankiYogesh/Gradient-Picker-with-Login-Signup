@@ -8,7 +8,7 @@ export const Register = ({ onClick }) => {
   const [isPassword, setISPassword] = useState(true);
 
   return (
-    <Fade right>
+    <Fade right cascade>
       <div id="textContainerView">
         <span id="startText">START FOR FREE</span>
         <span id="createText">Create new account</span>
