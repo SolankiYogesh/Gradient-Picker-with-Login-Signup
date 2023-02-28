@@ -1,6 +1,5 @@
 import "./App.css";
-import Button from "./Components/Button/Button";
-import TextInput from "./Components/TextInput/TextInput";
+
 // <-- import styles to be used
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
@@ -8,10 +7,11 @@ import loading from "./Assets/loading.json";
 import preview from "./Assets/data.json";
 import { Register } from "./Components/Register/Register";
 import { Login } from "./Components/Login/Login";
+import { ForgotPassword } from "./Components/ForgotPassword";
 
 function App() {
   const [isLoading, setISLoading] = useState(true);
-  const [isLogin, setISLogin] = useState(true);
+  const [isLogin, setISLogin] = useState(1);
 
   useEffect(() => {
     setTimeout(() => {
@@ -35,17 +35,22 @@ function App() {
           />
           <span id="titleText">Anywhere App</span>
 
-          <a href="http://localhost:3000/" id="btnText">
+          <a href="#" id="btnText">
             Home
           </a>
-          <a href="http://localhost:3000/" id="btnText">
+          <a href="#" id="btnText">
             Join
           </a>
         </div>
-        {isLogin ? (
-          <Login onClick={() => setISLogin(false)} />
+        {isLogin === 1 ? (
+          <Login
+            onClick={() => setISLogin(2)}
+            onClickForgotPassword={() => setISLogin(3)}
+          />
+        ) : isLogin === 2 ? (
+          <Register onClick={() => setISLogin(1)} />
         ) : (
-          <Register onClick={() => setISLogin(true)} />
+          <ForgotPassword onClick={() => setISLogin(1)} />
         )}
         <div id="preview">
           <Lottie animationData={preview} loop={true} />

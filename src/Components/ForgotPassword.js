@@ -1,21 +1,19 @@
-import React, { useState } from "react";
-import TextInput from "../TextInput/TextInput";
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
-import Button from "../Button/Button";
-import "./Login.css";
+import React from "react";
 import Fade from "react-reveal/Fade";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
-export const Login = ({ onClick, onClickForgotPassword }) => {
-  const [isPassword, setISPassword] = useState(true);
+import "./ForgotPassword.css";
+import TextInput from "./TextInput/TextInput";
+import Button from "./Button/Button";
+export const ForgotPassword = ({ onClick }) => {
   return (
-    <Fade left>
+    <Fade top>
       <div id="textContainerView">
         <span id="startText">START FOR FREE</span>
-        <span id="createText">Login</span>
+        <span id="createText">ForgotPassword</span>
         <span id="alreadyMembertext">
-          Don't have account
           <a onClick={onClick} id="loginText" href="#">
-            Register
+            Login ?
           </a>
         </span>
       </div>
@@ -26,17 +24,9 @@ export const Login = ({ onClick, onClickForgotPassword }) => {
           placeholder={"Email Address"}
           style={styles.passwInput}
         />
-        <TextInput
-          iconName={!isPassword ? solid("eye-slash") : solid("eye")}
-          isPassword={isPassword}
-          placeholder={"Password"}
-          style={styles.passwInput}
-          onClick={() => setISPassword(!isPassword)}
-        />
       </div>
       <div id="btnView">
-        <Button onClick={onClickForgotPassword} text={"Change Password"} />
-        <Button color={"#3090f4"} text={"Login"} />
+        <Button color={"#3090f4"} text={"Send Link"} />
       </div>
     </Fade>
   );

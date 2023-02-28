@@ -3,11 +3,12 @@ import TextInput from "../TextInput/TextInput";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import Button from "../Button/Button";
 import "./Register.css";
+import Fade from "react-reveal/Fade";
 export const Register = ({ onClick }) => {
   const [isPassword, setISPassword] = useState(true);
 
   return (
-    <>
+    <Fade right>
       <div id="textContainerView">
         <span id="startText">START FOR FREE</span>
         <span id="createText">Create new account</span>
@@ -46,10 +47,9 @@ export const Register = ({ onClick }) => {
         />
       </div>
       <div id="btnView">
-        <Button text={"Change Password"} />
         <Button color={"#3090f4"} onClick={onClick} text={"Create Account"} />
       </div>
-    </>
+    </Fade>
   );
 };
 
