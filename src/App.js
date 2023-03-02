@@ -8,10 +8,14 @@ import preview from "./Assets/data.json";
 import { Register } from "./Components/Register/Register";
 import { Login } from "./Components/Login/Login";
 import { ForgotPassword } from "./Components/ForgotPassword";
-
+import Fade from "react-reveal/Fade";
+import Modal from "react-modal";
+import Home from "./Components/Home/Home";
+import SnackbarProvider from "react-simple-snackbar";
 function App() {
   const [isLoading, setISLoading] = useState(true);
   const [isLogin, setISLogin] = useState(1);
+  const [isModal, setISModal] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,21 +31,25 @@ function App() {
     <div id="noselect" className="App">
       <img alt="background" id="background" src="/Assets/background.png"></img>
       <div id="innerDiv">
-        <div id="headerVIew">
-          <img
-            alt="Avatar"
-            class="avatar"
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-          />
-          <span id="titleText">Anywhere App</span>
+        <Fade top cascade>
+          <div id="headerVIew">
+            <img
+              onClick={() => setISModal(true)}
+              alt="Avatar"
+              class="avatar"
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            />
+            <span id="titleText">Anywhere App</span>
 
-          <a href="#" id="btnText">
-            Home
-          </a>
-          <a href="#" id="btnText">
-            Join
-          </a>
-        </div>
+            <a href="#" id="btnText" onClick={() => setISLogin(4)}>
+              Home
+            </a>
+            <a href="#" id="btnText" onClick={() => setISLogin(1)}>
+              Join
+            </a>
+          </div>
+        </Fade>
+
         {isLogin === 1 ? (
           <Login
             onClick={() => setISLogin(2)}
@@ -49,15 +57,44 @@ function App() {
           />
         ) : isLogin === 2 ? (
           <Register onClick={() => setISLogin(1)} />
-        ) : (
+        ) : isLogin === 3 ? (
           <ForgotPassword onClick={() => setISLogin(1)} />
+        ) : (
+          <SnackbarProvider>
+            <Home />
+          </SnackbarProvider>
         )}
+
         <div id="preview">
           <Lottie animationData={preview} loop={true} />
         </div>
       </div>
+
+      <Modal
+        isOpen={isModal}
+        onRequestClose={() => setISModal(false)}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <img
+          onClick={() => setISModal(false)}
+          alt="Avatar"
+          class="modalImage"
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+        />
+      </Modal>
     </div>
   );
 }
 
 export default App;
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
