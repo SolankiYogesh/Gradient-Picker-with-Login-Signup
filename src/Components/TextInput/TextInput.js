@@ -16,7 +16,6 @@ const TextInput = (props: TextInputProps) => {
   const { style, placeholder, isPassword, type, iconName, onChange, onClick } =
     props;
   const [focus, setFocus] = useState(false);
-  console.log("iconName", iconName);
 
   const styles = {
     borderColor: !focus ? "transparent" : "#3090f4",
