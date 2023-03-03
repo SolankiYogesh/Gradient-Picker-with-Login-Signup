@@ -13,10 +13,10 @@ export const HeaderComponent = ({ onClick, onClickButton }) => {
         />
         <span id="titleText">Anywhere App</span>
 
-        <a href="#" id="btnText" onClick={() => onClickButton(4)}>
+        <a href="/#" id="btnText" onClick={() => onClickButton(4)}>
           Home
         </a>
-        <a href="#" id="btnText" onClick={() => onClickButton(1)}>
+        <a href="/#" id="btnText" onClick={() => onClickButton(1)}>
           Join
         </a>
       </div>

@@ -12,7 +12,7 @@ export const ForgotPassword = ({ onClick }) => {
         <span id="startText">START FOR FREE</span>
         <span id="createText">ForgotPassword</span>
         <span id="alreadyMembertext">
-          <a onClick={onClick} id="loginText" href="#">
+          <a onClick={onClick} id="loginText" href="/#">
             Login ?
           </a>
         </span>
