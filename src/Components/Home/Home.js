@@ -25,10 +25,6 @@ const Home = () => {
     []
   );
 
-  useEffect(() => {
-    getGradients();
-  }, []);
-
   const getGradients = useCallback(() => {
     const gradients = [];
     for (let i = 0; i <= 20; i++) {
@@ -43,13 +39,16 @@ const Home = () => {
   }, [colors, directions]);
 
   const onPressGradientItem = (data) => {
-    console.log("data", data);
     navigator.clipboard.writeText(data);
     openSnackbar("linear gradient coppied successfully!");
     setTimeout(() => {
       closeSnackbar();
     }, 2000);
   };
+
+  useEffect(() => {
+    getGradients();
+  }, [getGradients]);
 
   const buttonStyle = {
     alignSelf: "center",

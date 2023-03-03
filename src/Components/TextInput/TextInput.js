@@ -10,15 +10,24 @@ interface TextInputProps {
   iconName?: string;
   onChange?: (text: string) => void;
   onClick?: () => void;
+  isError?: Boolean;
 }
 
 const TextInput = (props: TextInputProps) => {
-  const { style, placeholder, isPassword, type, iconName, onChange, onClick } =
-    props;
+  const {
+    style,
+    placeholder,
+    isPassword,
+    type,
+    iconName,
+    onChange,
+    onClick,
+    isError = false,
+  } = props;
   const [focus, setFocus] = useState(false);
 
   const styles = {
-    borderColor: !focus ? "transparent" : "#3090f4",
+    borderColor: isError ? "red" : !focus ? "transparent" : "#3090f4",
     ...style,
   };
   return (

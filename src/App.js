@@ -30,11 +30,15 @@ function App() {
   ) : (
     <div id="noselect" className="App">
       <img alt="background" id="background" src="/Assets/background.png"></img>
+
       <div id="innerDiv">
         <HeaderComponent
           onClickButton={setISLogin}
           onClick={() => setISModal(true)}
         />
+        <div id="preview">
+          <Lottie animationData={preview} loop={true} />
+        </div>
         {isLogin === 1 ? (
           <Login
             onClick={() => setISLogin(2)}
@@ -49,10 +53,6 @@ function App() {
             <Home />
           </SnackbarProvider>
         )}
-
-        <div id="preview">
-          <Lottie animationData={preview} loop={true} />
-        </div>
       </div>
 
       <Modal
